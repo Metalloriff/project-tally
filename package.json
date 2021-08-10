@@ -1,0 +1,37 @@
+{
+  "name": "project-tally",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npx electron . --dev",
+    "build": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.8",
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "appId": "metalloriff.project-tally.app",
+    "productName": "Project Tally",
+    "copyright": "Copyright © 2021 Israel Boone",
+    
+    "win": {
+      "artifactName": "${productName} (Windows).${ext}",
+      "icon": "assets/icon.ico",
+      "target": {
+        "target": "portable",
+        "arch": ["ia32"]
+      }
+    },
+    
+    "portable": {
+      "requestExecutionLevel": "user",
+      "useZip": true
+    }
+  },
+  "homepage": "./"
+}

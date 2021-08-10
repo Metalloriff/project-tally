@@ -1,0 +1,70 @@
+﻿{
+  "JavaScript": {
+    "color": "#f7df1e",
+    "extensions": [".js", ".jsx"]
+  },
+  "TypeScript": {
+    "color": "#0076c5",
+    "extensions": [".ts", ".tsx"]
+  },
+  "CSS": {
+    "color": "#30ace0",
+    "extensions": [".css"]
+  },
+  "Scss": {
+    "color": "#d1649d",
+    "extensions": [".scss"]
+  },
+  "Sass": {
+    "color": "#d1649d",
+    "extensions": [".sass"]
+  },
+  "HTML": {
+    "color": "#eb6132",
+    "extensions": [".html"]
+  },
+  "Python": {
+    "color": "#346c99",
+    "extensions": [".py", ".pyw", ".py3", ".pyc", ".pyo", ".pyd", ".pxi", ".pyz", ".pywz"]
+  },
+  "Cython": {
+    "color": "#656565",
+    "extensions": [".pyx", ".pxd"]
+  },
+  "Java": {
+    "color": "#7f523e",
+    "extensions": [".java"]
+  },
+  "GO": {
+    "color": "#67d0dd",
+    "extensions": [".go"]
+  },
+  "Ruby": {
+    "color": "#e70e13",
+    "extensions": [".rb"]
+  },
+  "C++": {
+    "color": "#6295cb",
+    "extensions": [".cpp", ".cc"]
+  },
+  "C": {
+    "color": "#005697",
+    "extensions": [".c"]
+  },
+  "C#": {
+    "color": "#9c74d4",
+    "extensions": [".cs"]
+  },
+  "CoffeeScript": {
+    "color": "#27324a",
+    "extensions": [".coffee"]
+  },
+  "Lua": {
+    "color": "#00007c",
+    "extensions": [".lua"]
+  },
+  "PHP": {
+    "color": "#6b6fa5",
+    "extensions": [".php"]
+  }
+}

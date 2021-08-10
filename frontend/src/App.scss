@@ -1,0 +1,343 @@
+@import "./Variables.scss";
+
+:root {
+	--primary-color: #8fbcbb;
+	--secondary-color: #88c0d0;
+	
+	--primary-bg: #2e3440;
+	--secondary-bg: #3b4252;
+	--tertiary-bg: #434c5e;
+	
+	--primary-border-radius: 4px;
+	--secondary-border-radius: 7px;
+}
+
+html {
+	background-color: $primaryBG;
+	color: white;
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	margin: 0;
+	color: darken(white, 12%);
+}
+
+// I hate Firefox
+* {
+	scrollbar-width: thin;
+	scrollbar-color: $primaryColor rgba(black, 0.1);
+}
+
+.App, .Main {
+	min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+	background: rgba(black, 0.1);
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $primaryColor;
+	border-radius: $primaryBorderRadius;
+}
+
+footer {
+	background-color: $secondaryBG;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	padding: 10px;
+	
+	box-shadow: 0 0 15px rgba(black, 0.1);
+	
+	> .Divider {
+		width: 2px;
+		height: 1.5em;
+		
+		border-radius: 2px;
+		margin: 0 10px;
+		
+		background-color: $primaryHover;
+	}
+}
+
+a {
+	color: $primaryColor;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.Main {
+	position: relative;
+
+	.Buttons {
+		display: flex;
+		flex-grow: 1;
+		
+		margin: 30px 20px;
+		
+		.Button {
+			width: 50%;
+			
+			&:First-Child { margin-right: 10px; }
+			&:Last-Child { margin-left: 10px; }
+		}
+	}
+
+	.Button {
+		border: 1px solid $primaryHover;
+		border-radius: $primaryBorderRadius;
+		background-color: $secondaryBG;
+
+		text-align: center;
+		flex-grow: 1;
+
+		padding: 10px;
+
+		transition: border-color $ft;
+		cursor: pointer;
+
+		&:Hover {
+			border-color: $primaryColor;
+		}
+	}
+	
+	.FilePickerContainer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		padding: 10px;
+		margin: 10px;
+		
+		border-radius: $primaryBorderRadius;
+		background-color: $secondaryBG;
+		
+		border: 1px solid $primaryHover;
+		cursor: pointer;
+		transition: border-color $ft;
+		
+		&:Hover {
+			border-color: $primaryColor;
+		}
+		
+		.DirectoryContainer {
+			flex-grow: 1;
+			margin: 0 10px;
+			padding: 5px 7px;
+			
+			border: 1px solid $primaryHover;
+			border-radius: $primaryBorderRadius;
+		}
+	}
+
+	.DirectoryPropertyContainer {
+		margin-left: 28px;
+		
+		display: flex;
+		flex-direction: column;
+		
+		> :Not(:First-Child) {
+			margin-left: 30px;
+		}
+		
+		.BlacklistContainer {
+			background-color: $secondaryBG;
+			border: 1px solid $primaryHover;
+			border-radius: $primaryBorderRadius;
+			
+			padding: 12px;
+			margin-right: 30px;
+			
+			flex-grow: 1;
+			
+			> .Field {
+				border: 1px solid $primaryHover;
+				border-radius: $primaryBorderRadius;
+				
+				outline: none;
+				background-color: transparent;
+				color: white;
+				
+				padding: 5px 15px;
+				line-height: 30px;
+				
+				width: calc(100% - 30px) !important;
+				min-height: 100px;
+				
+				transition: border-color $ft, background-color $ft;
+				
+				&:Focus, &:Hover {
+					border-color: $primaryColor;
+				}
+				
+				&:Focus {
+					background-color: $tertiaryBG;
+				}
+			}
+		}
+		
+		.LanguagesList {
+			background-color: $secondaryBG;
+			border: 1px solid $primaryHover;
+			border-radius: $primaryBorderRadius;
+
+			padding: 12px;
+			margin: 20px 30px 30px 0;
+
+			flex-grow: 1;
+			
+			.List {
+				position: relative;
+				
+				.SwitchItem {
+					display: flex;
+					align-items: center;
+					
+					border: 1px solid $primaryHover;
+					border-radius: 100px;
+					
+					width: max-content;
+					height: 30px;
+					
+					transition: border-color $ft;
+					
+					&:Hover {
+						border-color: $primaryColor;
+					}
+					
+					.ColorItem {
+						display: inline-block;
+						
+						width: 13px;
+						height: 13px;
+						border-radius: 100px;
+						
+						margin: 0 10px;
+					}
+					
+					.SubTitle {
+						display: inline-block;
+						width: 100px;
+					}
+				}
+			}
+		}
+	}
+
+	.TallyDataList {
+		margin: 0 10px 15px;
+
+		flex-grow: 1;
+
+		.TallyItem {
+			background-color: $secondaryBG;
+			border: 1px solid $primaryHover;
+			border-radius: $primaryBorderRadius;
+
+			padding: 12px;
+			margin: 10px;
+			
+			.Title {
+				display: flex;
+				align-items: center;
+			}
+
+			.ColorItem {
+				display: inline-block;
+
+				width: 15px;
+				height: 15px;
+				border-radius: 100px;
+
+				margin: 0 10px;
+			}
+			
+			cursor: pointer;
+			transition: border-color $ft;
+			
+			&:Hover {
+				border-color: $primaryColor;
+			}
+			
+			.Contents {
+				margin-top: 10px;
+				padding: 15px;
+				
+				border: 1px solid $primaryHover;
+				border-radius: $primaryBorderRadius;
+				
+				cursor: default;
+				
+				.Entry {
+					> .Big {
+						font-size: 1.2em;
+						font-weight: bolder;
+						color: $primaryColor;
+						
+						margin-top: 30px;
+					}
+					
+					> span {
+						color: $primaryColor;
+					}
+					
+					.PercentageTally {
+						position: relative;
+						
+						width: 100%;
+						height: 15px;
+						
+						border: 1px solid $primaryHover;
+						border-radius: 100px;
+						
+						margin-top: 5px;
+						margin-bottom: 15px;
+						
+						display: flex;
+						
+						> .Bar {
+							height: 100%;
+							
+							transition: transform $ft;
+							
+							&:Not(:First-Child):Not(:Last-Child) {
+								margin: 0 3px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	h2.Title {
+		margin: 0;
+		pointer-events: none;
+	}
+	
+	p.Note {
+		opacity: 0.8;
+		
+		margin: 10px 0;
+	}
+}
+
+.Processing {
+	text-align: center;
+}
